@@ -6,6 +6,13 @@ Chess with no turns. Every piece has a cooldown, both armies move at the same ti
 
 It's a single HTML file with no dependencies beyond two Google Fonts. Music and sound effects are generated in the browser.
 
+## Install it on your phone
+
+It installs like an app, with a home-screen icon, full screen, and offline play.
+
+- **Android (Chrome):** open the link, then tap **Install app** (or ⋮ → Add to Home screen).
+- **iPhone (Safari):** open the link, tap **Share**, then **Add to Home Screen**.
+
 ## How to play
 
 - Tap a piece, then a square, or drag it. A full ring means the piece is ready.
@@ -30,4 +37,6 @@ How the latest batch of features was chosen: [docs/ideas-tournament.md](docs/ide
 
 - `bullet-hell-chess.html` is the game source. It's written as a page body without the `<html>`/`<head>` wrapper.
 - Run `./build.sh` to regenerate `index.html`, the full page that GitHub Pages serves.
+- `manifest.webmanifest`, `sw.js` and `icons/` make the site installable and playable offline. `.claude/icons.ps1` redraws the icons. If you add files the app needs, list them in `sw.js` and bump its `VERSION`.
+- `.claude/static.ps1` serves the built site on `http://localhost:5174/` for testing the installed app.
 - `.claude/serve.ps1` is a local test server, and `.claude/bot.js` is a balance-testing bot. Open `http://localhost:5173/?shim&bot` and run `BOT.chunk('mid', 40, .55, .7)` in the console to simulate 40 runs.
